@@ -9,8 +9,9 @@
 
 ## Cách run chương trình
 #### Bước 1: Run Kafka theo các bước trong file txt.txt
-#### Bước 2: Run file 1.py
-#### Bước 3: Run file 2.py bằng Spark
+#### Bước 2: Run file 1.py để đọc dữ liệu
+#### Bước 3: Run file 2.py bằng Spark để nhận dữ liệu, xử lý cơ bản và lưu vào thư mục /ODAP/transaction/ trên HDFS
 
 ## Lưu ý
 *Kiểm tra mức độ tương thích của các đường dẫn file*
+*Tạo sẵn các thư mục cân thiết trên HDFS*
