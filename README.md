@@ -1,7 +1,7 @@
 # ODAP
 Đồ án thực hành ODAP
 ## Mô tả: 
-Đồ án giả sử việc xử lý dữ liệu trực tuyến bằng cách đọc dữ liệu từ tập tin .csv và xem từng dòng dữ liệu như là dữ liệu giao dịch đang phát sinh trong thực tế. Sử dụng Kafka để đọc các dòng dữ liệu và thông qua Spark (pyspark) để lư trữ dữ liệu lên HDFS. Sau đó sử dụng Power BI để trực quan hóa dữ liệu đã lưu trữ.
+Đồ án giả sử việc xử lý dữ liệu trực tuyến bằng cách đọc dữ liệu từ tập tin .csv và xem từng dòng dữ liệu như là dữ liệu giao dịch đang phát sinh trong thực tế. Sử dụng Kafka để đọc các dòng dữ liệu và thông qua Spark (pyspark) để lư trữ dữ liệu lên HDFS dưới dạng các file csv. Sau đó sử dụng Power BI để trực quan hóa dữ liệu đã lưu trữ.
 ## Yêu cầu:
 - Kafka phiên bản 3.6.0 (hoặc tương tự)
 - Hadoop phiên bản 3.3.6 (hoặc tương tự)
