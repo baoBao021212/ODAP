@@ -1,0 +1,7 @@
+start zookeeper: C:\kafka>.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+start kafka: C:\kafka>.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+tạo topic (admin run): C:\kafka>.\bin\windows\kafka-topics.bat  --bootstrap-server localhost:9092 --topic projectck --create --partitions 3 -replication-factor 1
+
+spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.0 2.py
