@@ -6,6 +6,8 @@ import time
 import requests
 from pyspark.sql.functions import regexp_replace, translate, when
 from pyspark.sql.functions import udf
+from pyspark.sql.functions import concat_ws, col
+
 
 cur = 24575.0
 def USDtoVND():
@@ -83,8 +85,9 @@ parsed_df = kafka_df.select(col("value").cast("string")).alias("csv").select("cs
     .withColumn("Errors?", expr("split(value,',')[13]")) \
     .withColumn("Is Fraud?", expr("split(value,',')[14]"))\
     .withColumn('Amount', translate('Amount', '$', '0'))\
-    .withColumn("currency", udf_USDtoVND())
-    
+    .withColumn("currency", udf_USDtoVND())\
+    .withColumn("Date", concat_ws("/", col("Day"), col("Month"), col("Year")))
+
 #.withColumn("AmountVND", when(parsed_df.Amount == '', '').otherwise( parsed_df.currency * parsed_df.Amount))\
 # Thực hiện các xử lý hoặc tính toán dữ liệu ở đây
 processed_df = parsed_df.withColumn("Amount",parsed_df["Amount"].cast(DoubleType()))
